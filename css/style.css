@@ -91,3 +91,7 @@ input:focus {
 input:focus::placeholder {
   color: #fff;
 }
+
+#displayNone {
+  display: none;
+}

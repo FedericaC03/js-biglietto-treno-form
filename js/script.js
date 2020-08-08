@@ -1,13 +1,21 @@
-//METTO IL BUTTON GENERA IN UNA VARIABILE
+//METTO I BUTTON GENERA E ANNULLA IN UNA VARIABILE
 var genera = document.getElementById("genera");
+var annulla = document.getElementById("annulla");
+//METTO LA SEZIONE BIGLIETTO IN UNA VARIABILE
+var displayNone = document.getElementById("displayNone");
 
-//PRENDO IL VALORE DALL'INPUT NOME ETA E KM
-//STAMPO NEL CAMPO NOME PASSEGGERO IL NOME INSERITO DALL'UTENTE
 genera.addEventListener("click",
 function() {
+
+//METTO IN DISPLAY BLOCK QUANDO SI CLICCA SU GENERA
+  displayNone.style.display = "block";
+
+//PRENDO IL VALORE DALL'INPUT NOME ETA E KM
   var nome = document.getElementById("nome").value;
   var km = document.getElementById("km").value;
   var eta = document.getElementById("eta").value;
+
+  //STAMPO NEL CAMPO NOME PASSEGGERO IL NOME INSERITO DALL'UTENTE
   document.getElementById('nome-passeggero').innerHTML = nome;
 
 //DEFINISCO L'OFFERTA IN BASE ALL'ETA' DELL'UTENTE
@@ -15,11 +23,11 @@ function() {
   var prezzoxkm = km * 0.21;
   var sconto = document.getElementById('sconto');
   if (eta == "minorenne") {
-    sconto.innerHTML = "sconto minorenni";
+    sconto.innerHTML = "Sconto minorenni";
   } else if (eta == "over65") {
-    sconto.innerHTML = "prezzo silver";
+    sconto.innerHTML = "Prezzo silver";
   } else {
-    sconto.innerHTML = "prezzo standard";
+    sconto.innerHTML = "Prezzo standard";
   }
   //GENERO UN NUMERO CASUALE DELLA CARROZZA
   var carrozza = document.getElementById("carrozza");
@@ -36,7 +44,14 @@ function() {
   } else if ( eta == "over65") {
     prezzobiglietto.innerHTML = ((prezzoxkm - ((prezzoxkm * 40) / 100))).toFixed(2);
   } else {
-    prezzobiglietto.innerHTML = prezzoxkm;
+    prezzobiglietto.innerHTML = prezzoxkm.toFixed(2);
   }
+}
+);
+
+//METTO IN DISPLAY BLOCK QUANDO SI CLICCA SU ANNULLA
+annulla.addEventListener("click",
+function() {
+  displayNone.style.display = "none";
 }
 );
