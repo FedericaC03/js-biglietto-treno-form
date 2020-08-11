@@ -10,30 +10,30 @@
 <body>
 <div id="wrapper">
   <h2>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
-<div id="container-calcolo">
-  <div class="row">
-      <div class="col">
-          <label for="nome">Nome Cognome</label>
-          <input id="nome" type="text" placeholder="Inserisci il tuo nome">
-      </div>
-      <div class="col">
-        <label for="km">Km da percorrere</label>
-        <input id="km" type="number" placeholder="Inserisci i km ">
-      </div>
-      <div class="col">
-        <label for="eta">Fascia d'età</label>
-        <select id="eta" name="fascia-eta">
-          <option value="minorenne">Minorenne</option>
-          <option value="maggiorenne">Maggiorenne</option>
-          <option value="over65">Over 65</option>
-        </select>
-      </div>
+  <div id="container-calcolo">
+    <div class="row">
+        <div class="col">
+            <label for="nome">Nome Cognome</label>
+            <input id="nome" type="text" placeholder="Inserisci il tuo nome">
+        </div>
+        <div class="col">
+          <label for="km">Km da percorrere</label>
+          <input id="km" type="number" placeholder="Inserisci i km ">
+        </div>
+        <div class="col">
+          <label for="eta">Fascia d'età</label>
+          <select id="eta" name="fascia-eta">
+            <option value="minorenne">Minorenne</option>
+            <option value="maggiorenne">Maggiorenne</option>
+            <option value="over65">Over 65</option>
+          </select>
+        </div>
+    </div>
+    <div class="buttons">
+      <button id="genera" class="btn">Genera</button>
+      <button id="annulla" class="btn">Annulla</button>
+    </div>
   </div>
-  <div class="buttons">
-    <button id="genera" class="btn">Genera</button>
-    <button id="annulla" class="btn">Annulla</button>
-  </div>
-</div>
 
   <div id="displayNone">
     <h2>IL TUO BIGLIETTO</h2>
@@ -45,22 +45,22 @@
               <p id="nome-passeggero"></p>
             </div>
             <div id="descrizionebiglietto">
-            <div class="offerta">
-              <h3>Offerta</h3>
-              <p id="sconto"></p>
-            </div>
-            <div class="carrozza">
-              <h3>Carrozza</h3>
-              <p id="carrozza">7</p>
-            </div>
-            <div class="codicecp">
-              <h3>Codice CP</h3>
-              <p id="prenotazione"></p>
-            </div>
-            <div class="prezzob">
-              <h3>Costo biglietto</h3>
-              <p id="prezzoBiglietto"></p>
-            </div>
+              <div class="offerta">
+                <h3>Offerta</h3>
+                <p id="sconto"></p>
+              </div>
+              <div class="carrozza">
+                <h3>Carrozza</h3>
+                <p id="carrozza">7</p>
+              </div>
+              <div class="codicecp">
+                <h3>Codice CP</h3>
+                <p id="prenotazione"></p>
+              </div>
+              <div class="prezzob">
+                <h3>Costo biglietto</h3>
+                <p id="prezzoBiglietto"></p>
+              </div>
             </div>
         </div>
       </div>
