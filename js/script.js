@@ -4,6 +4,7 @@ var annulla = document.getElementById("annulla");
 //METTO LA SEZIONE BIGLIETTO IN UNA VARIABILE
 var displayNone = document.getElementById("displayNone");
 
+//AGGIUNGO LE FUNZIONI QUANDO SI CLICCA SU GENERA
 genera.addEventListener("click",
 function() {
 
@@ -15,7 +16,7 @@ function() {
   var km = document.getElementById("km").value;
   var eta = document.getElementById("eta").value;
 
-  //STAMPO NEL CAMPO NOME PASSEGGERO IL NOME INSERITO DALL'UTENTE
+//STAMPO NEL CAMPO NOME PASSEGGERO IL NOME INSERITO DALL'UTENTE
   document.getElementById('nome-passeggero').innerHTML = nome;
 
 //DEFINISCO L'OFFERTA IN BASE ALL'ETA' DELL'UTENTE
@@ -29,15 +30,15 @@ function() {
   } else {
     sconto.innerHTML = "Prezzo standard";
   }
-  //GENERO UN NUMERO CASUALE DELLA CARROZZA
+//GENERO UN NUMERO CASUALE DELLA CARROZZA
   var carrozza = document.getElementById("carrozza");
   carrozza.innerHTML = Math.floor(Math.random() * 9) + 1;
 
-  //GENERO UN NUMERO CASUALE DEL CAMBIO PRENOTAZIONE
+//GENERO UN NUMERO CASUALE DEL CAMBIO PRENOTAZIONE
   var prenotazione = document.getElementById("prenotazione");
   prenotazione.innerHTML = Math.floor(Math.random() * 9999) + 90000;
 
-  //CALCOLO IL PREZZO DEL BIGLIETTO IN BASE AI KM E ALL'ETA
+//CALCOLO IL PREZZO DEL BIGLIETTO IN BASE AI KM E ALL'ETA
   var prezzobiglietto = document.getElementById("prezzoBiglietto");
   if ( eta == "minorenne") {
     prezzobiglietto.innerHTML = ((prezzoxkm - ((prezzoxkm * 20) / 100))).toFixed(2);
@@ -46,12 +47,19 @@ function() {
   } else {
     prezzobiglietto.innerHTML = prezzoxkm.toFixed(2);
   }
+//GENERO UN ALERT SE I CAMPI NON VENGONO COMPILATI
+  if (nome == null || nome == "", km == null || km == "", eta == null || eta == "") {
+      alert("Per favore compila tutti i campi");
+    }
 }
 );
 
-//METTO IN DISPLAY BLOCK QUANDO SI CLICCA SU ANNULLA
+//METTO IN DISPLAY BLOCK QUANDO SI CLICCA SU ANNULLA E ANNULLO I DATI INSERITI
 annulla.addEventListener("click",
 function() {
   displayNone.style.display = "none";
+  nome.value = "";
+  km.value = "";
+  eta.value = "";
 }
 );
